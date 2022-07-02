@@ -1,3 +1,11 @@
+/* 
+
+Classic Template
+
+http://www.templatemo.com/tm-488-classic
+
+-----------------------------*/
+
 body {
 	color: #8c8c8c;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -74,16 +82,16 @@ h2 { font-size: 2.2rem; }
 }
 
 .tm-home-img-container {
-	background-image: url('./assets/img/tm-home-img.jpg');
+	background-image: url('../img/tm-home-img.jpg');
 	background-size: auto;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 500px;
 }
 
-.tm-about-img-container { background-image: url('./assets/img/tm-about-img.jpg');	}
-.tm-blog-img-container { background-image: url('./assets/img/tm-blog-img.jpg'); }
-.tm-contact-img-container { background-image: url('./assets/img/tm-contact-img.jpg'); }
+.tm-about-img-container { background-image: url('../img/tm-about-img.jpg');	}
+.tm-blog-img-container { background-image: url('../img/tm-blog-img.jpg'); }
+.tm-contact-img-container { background-image: url('../img/tm-contact-img.jpg'); }
 
 .tm-about-img-container,
 .tm-blog-img-container,
@@ -168,7 +176,7 @@ h4 {
 .tm-footer {
 	color: #c6c6c6;
 	background-color: #191919;
-	background-image: url('./assets/img/classic-pattern-bg.png');
+	background-image: url('../img/classic-pattern-bg.png');
 	font-size: 1rem;
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -420,25 +428,4 @@ p { line-height: 1.9; }
 		margin-left: auto;
 		margin-right: auto;
 	}
-}
-
-.cardpadding{
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-}
-
-.centreimg{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
-.gobackbtn{
-	float: left;
-	color: white;
-	background-color: #cc9900;
-	border: none;
-	border-radius: 5px;
-	display: inline-block;
-	padding: 10px 30px;
 }
