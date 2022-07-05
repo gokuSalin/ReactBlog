@@ -1,10 +1,24 @@
-import logoimg from '../assets/img/logo.png';
+import {useState} from 'react';
+
 const Header = ()=>{
+    const [headerTitle, setHeaderTitle] = useState('');
+    // const callAPI =async ()=>{
+    //     let dataFetch = await fetch("http://localhost:9000/apitest");
+    //     console.log(dataFetch);
+    //     // dataFetch = dataFetch => dataFetch.text();
+    //     // setHeaderTitle(dataFetch);
+    // }
+    const callAPI = ()=>{
+        fetch("http://localhost:9000/apitest").then(res=>res.text()).then(res=>setHeaderTitle(res)).catch(err=>err);
+    }
+    setTimeout(()=>{
+        callAPI();
+    },8000);
     return(
         <div className="tm-header">
         <div className="container-fluid">
             <div className="tm-header-inner">
-                <a href="#" className="navbar-brand tm-site-name">Personal Blog</a>
+                <a href="#" className="navbar-brand tm-site-name">{headerTitle?headerTitle:'Personal Blog'}</a>
                 
                 <nav className="navbar tm-main-nav">
 
