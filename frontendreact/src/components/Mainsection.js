@@ -9,7 +9,12 @@ const Mainsection= () =>{
     const [dataJson, setDataJson] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:9000/datalist").then(res=>res.data.json()).then(res=>setDataJson(res)).catch(err=>err);
+        const fetchFn = async ()=>{
+            let data = await fetch("http://localhost:9000/datalist");
+            data = await data.json()
+            data?setDataJson(data):console.log(data,'error');
+        }
+        fetchFn();
     },[])
 
     const fullViewHandler = (id,flag)=>{
@@ -38,18 +43,17 @@ const Mainsection= () =>{
         />
     )
     }
-
     
     return(
         <section className="tm-section">
             <div className="container-fluid">
                 {!isFullview?<div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
-                        <h2 className="tm-gold-text tm-title">Introduction</h2>
-                        <p className="tm-subtitle">welcome to my blog where i share my experiences from my travels</p>
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center introCard">
+                        <h2 className="tm-gold-text tm-title tm-margin-t-small">Introduction</h2>
+                        <p className="tm-subtitle">Welcome to my blog where i share my experiences from my travels</p>
                     </div>
                 </div>:''}
-                <div className="row">
+                <div className="row introCard tm-margin-t-small">
                     {cardListing.length!==0?cardListing:fullviewPage}
                 </div>
             </div>

@@ -2,12 +2,6 @@ import {useState} from 'react';
 
 const Header = ()=>{
     const [headerTitle, setHeaderTitle] = useState('');
-    // const callAPI =async ()=>{
-    //     let dataFetch = await fetch("http://localhost:9000/apitest");
-    //     console.log(dataFetch);
-    //     // dataFetch = dataFetch => dataFetch.text();
-    //     // setHeaderTitle(dataFetch);
-    // }
     const callAPI = ()=>{
         fetch("http://localhost:9000/apitest").then(res=>res.text()).then(res=>setHeaderTitle(res)).catch(err=>err);
     }
