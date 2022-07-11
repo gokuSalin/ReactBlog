@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gokuSalin/ReactBlog/issues"
   },
-  "homepage": "https://github.com/gokuSalin/ReactBlog#readme"
+  "homepage": "https://github.com/gokuSalin/ReactBlog#readme",
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
+  }
 }

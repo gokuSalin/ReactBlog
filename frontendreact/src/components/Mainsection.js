@@ -1,6 +1,7 @@
 import MainCard from './MainCard'
 import {useState, useEffect} from 'react'
 import FullView from './FullView';
+import ImgContainer from './ImgContainer';
 
 const Mainsection= () =>{
 
@@ -45,6 +46,8 @@ const Mainsection= () =>{
     }
     
     return(
+        <>
+        <ImgContainer/>
         <section className="tm-section">
             <div className="container-fluid">
                 {!isFullview?<div className="row">
@@ -58,6 +61,7 @@ const Mainsection= () =>{
                 </div>
             </div>
         </section>
+        </>
     )
 }
 export default Mainsection;

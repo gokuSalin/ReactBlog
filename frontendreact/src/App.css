@@ -440,6 +440,7 @@ p { line-height: 1.9; }
 	border-radius: 5px;
 	display: inline-block;
 	padding: 10px 30px;
+	margin-left: 10px;
 }
 
 .imgContainer{
@@ -453,7 +454,7 @@ p { line-height: 1.9; }
 }
 
 .fullcardFeat{
-	background-color: #ababa5c5;
+	background-color: #f3d8bd9e;
 	border-radius: 5px;
 }
 
