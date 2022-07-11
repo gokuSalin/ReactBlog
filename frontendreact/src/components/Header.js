@@ -8,6 +8,10 @@ const Header = ()=>{
     setTimeout(()=>{
         callAPI();
     },8000);
+    let windowURl = window.location.href;
+    let keywordUrl = windowURl.substring(windowURl.lastIndexOf('/')+1,windowURl.length)
+    let [ishome,isblog,iscontact, isabout] =['nav-item', 'nav-item', 'nav-item', 'nav-item'];
+    keywordUrl==='about'?isabout+=' active':keywordUrl==='contact'?iscontact+=' active':keywordUrl==='blog'?isblog+=' active':ishome+=' active';
     return(
         <div className="tm-header">
         <div className="container-fluid">
@@ -21,17 +25,17 @@ const Header = ()=>{
                     </button>
                     
                     <div className="collapse navbar-toggleable-sm" id="tmNavbar">
-                        <ul class="nav navbar-nav">
-                            <li className="nav-item active">
+                        <ul className="nav navbar-nav">
+                            <li className={ishome}>
                                 <a href="/" className="nav-link">Home</a>
                             </li>
-                            <li className="nav-item">
+                            <li className={isabout}>
                                 <a href="about" className="nav-link">About</a>
                             </li>
-                            <li className="nav-item">
+                            <li className={isblog}>
                                 <a href="blog" className="nav-link">Blog</a>
                             </li>
-                            <li className="nav-item">
+                            <li className={iscontact}>
                                 <a href="contact" className="nav-link">Contact</a>
                             </li>
                         </ul>                        
