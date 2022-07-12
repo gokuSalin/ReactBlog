@@ -1,13 +1,11 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const Header = ()=>{
     const [headerTitle, setHeaderTitle] = useState('');
     const callAPI = ()=>{
         fetch("http://localhost:9000/apitest").then(res=>res.text()).then(res=>setHeaderTitle(res)).catch(err=>err);
     }
-    setTimeout(()=>{
-        callAPI();
-    },8000);
+    useEffect(()=>{callAPI()},[])
     let windowURl = window.location.href;
     let keywordUrl = windowURl.substring(windowURl.lastIndexOf('/')+1,windowURl.length)
     let [ishome,isblog,iscontact, isabout] =['nav-item', 'nav-item', 'nav-item', 'nav-item'];

@@ -1,5 +1,5 @@
 import MainCard from './MainCard'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import FullView from './FullView';
 import ImgContainer from './ImgContainer';
 
@@ -9,14 +9,15 @@ const Mainsection= () =>{
     const [currentId, setCurrentId] = useState(null);
     const [dataJson, setDataJson] = useState([]);
 
-    useEffect(()=>{
-        const fetchFn = async ()=>{
-            let data = await fetch("http://localhost:9000/datalist");
-            data = await data.json()
-            data?setDataJson(data):console.log(data,'error');
-        }
-        fetchFn();
+    
+    const fetchFn = useCallback(async ()=>{
+        let data = await fetch("http://localhost:9000/datalist");
+        data = await data.json()
+        data?setDataJson(data):console.log(data,'error');
     },[])
+    useEffect(()=>{
+        fetchFn();
+    },[fetchFn]);
 
     const fullViewHandler = (id,flag)=>{
         flag?setCurrentId(id):setCurrentId(null);

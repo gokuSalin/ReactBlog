@@ -1,4 +1,30 @@
+import Listwithanchor from "./Listwithanchor"
+
+const categoryList =[
+    {
+        index:0,
+        name:'Travel',
+        link:'https://en.wikipedia.org/wiki/Travel'
+},{
+    index:1,
+    name:'Food',
+    link:'https://en.wikipedia.org/wiki/food'
+},{
+    index:2,
+    name:'Art',
+    link:'https://en.wikipedia.org/wiki/art'
+},{
+    index:3,
+    name:'Sport',
+    link:'https://en.wikipedia.org/wiki/sport'
+},{
+    index:4,
+    name:'Culture',
+    link:'https://en.wikipedia.org/wiki/culture'
+}
+]
 const BlogSection =()=>{
+    const catList = categoryList.map(list=><Listwithanchor link={list.link} name={list.name}/>)
     return(
         <>
         <div className="tm-blog-img-container">
@@ -75,13 +101,7 @@ const BlogSection =()=>{
                                     </h3>
                                     <nav>
                                         <ul className="nav">
-                                            <li><a href="#" className="tm-text-link">Lorem ipsum dolor sit</a></li>
-                                            <li><a href="#" className="tm-text-link">Tincidunt non faucibus placerat</a></li>
-                                            <li><a href="#" className="tm-text-link">Vestibulum tempor ac lectus</a></li>
-                                            <li><a href="#" className="tm-text-link">Elementum egestas dui</a></li>
-                                            <li><a href="#" className="tm-text-link">Nam in augue consectetur</a></li>
-                                            <li><a href="#" className="tm-text-link">Fusce non turpis euismod</a></li>
-                                            <li><a href="#" className="tm-text-link">Text Link Color #006699</a></li>
+                                            {catList}
                                         </ul>
                                     </nav>
                                     <hr className="tm-margin-t-small"/>   
