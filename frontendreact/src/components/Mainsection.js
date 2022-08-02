@@ -8,12 +8,19 @@ const Mainsection= () =>{
     const [isFullview, setFullVIew]= useState(false);
     const [currentId, setCurrentId] = useState(null);
     const [dataJson, setDataJson] = useState([]);
+    const [dynotest, setDynamo] = useState(0);
 
     
     const fetchFn = useCallback(async ()=>{
         let data = await fetch("http://localhost:9000/datalist");
         data = await data.json()
         data?setDataJson(data):console.log(data,'error');
+
+
+        let RandomLink = "http://localhost:9000/dynamo/"+(Math.random()*100).toFixed(0);
+        let randomData = await fetch(RandomLink);
+        randomData = await randomData.text();
+        randomData?setDynamo(randomData):console.log(randomData,'error');
     },[])
     useEffect(()=>{
         fetchFn();
@@ -55,6 +62,7 @@ const Mainsection= () =>{
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center introCard">
                         <h2 className="tm-gold-text tm-title tm-margin-t-small">Introduction</h2>
                         <p className="tm-subtitle">Welcome to my blog where i share my experiences from my travels</p>
+                        <p className="tm-subtitle">Todays Lucky Number : {dynotest}</p>
                     </div>
                 </div>:''}
                 <div className="row introCard tm-margin-t-small">

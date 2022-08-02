@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var testapiRouter = require("./routes/apitest");
 var dataListRouter = require("./routes/datalist");
 var commentRouter = require("./routes/comments");
+var dynamicApi = require('./routes/dynamicapi');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/users', usersRouter);
 app.use('/apitest', testapiRouter);
 app.use('/datalist', dataListRouter);
 app.use('/comment', commentRouter);
+app.use('/dynamo', dynamicApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
